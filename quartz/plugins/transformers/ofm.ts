@@ -253,6 +253,13 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
                         },
                       },
                     }
+                  } 
+                  else if (ext == ".excalidraw") {
+                    // console.log(fp + anchor)
+                    return {
+                      type: "break",
+                      value: '<h1>excalidraw image here</h1>'
+                    }
                   } else if ([".mp4", ".webm", ".ogv", ".mov", ".mkv"].includes(ext)) {
                     return {
                       type: "html",
@@ -286,6 +293,8 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
 
                 // internal link
                 const url = fp + anchor
+
+                // console.log(url)
                 return {
                   type: "link",
                   url,

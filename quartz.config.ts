@@ -70,8 +70,14 @@ const config: QuartzConfig = {
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
     ],
-    filters: [Plugin.RemoveDrafts()],
+    filters: 
+    [
+      Plugin.RemoveDrafts(),
+      Plugin.RemoveExcalidraw()
+    ],
     emitters: [
+      Plugin.ObsidianExcalidraw(),
+      Plugin.Assets(),
       Plugin.AliasRedirects(),
       Plugin.ComponentResources(),
       Plugin.ContentPage(),
@@ -81,7 +87,6 @@ const config: QuartzConfig = {
         enableSiteMap: true,
         enableRSS: true,
       }),
-      Plugin.Assets(),
       Plugin.Static(),
       Plugin.NotFoundPage(),
     ],

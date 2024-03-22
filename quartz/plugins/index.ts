@@ -41,6 +41,8 @@ export function getStaticResourcesFromPlugins(ctx: BuildCtx) {
 export * from "./transformers"
 export * from "./filters"
 export * from "./emitters"
+export { ObsidianExcalidraw } from "./emitters/excalidraw"
+export { RemoveExcalidraw } from "./filters/excalidraw"
 
 declare module "vfile" {
   // inserted in processors.ts
